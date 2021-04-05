@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.AddDescriptionPage">
+    <StackLayout VerticalOptions="Center">
+
+        <Editor x:Name="EditorTextInput"
+                HeightRequest="300"
+                Placeholder="Enter exercise description">
+
+        </Editor>
+
+        <ScrollView Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand">
+            <StackLayout BindableLayout.ItemsSource="{Binding Exercises}"
+                         Orientation="Horizontal">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Frame Margin="0" 
+                                   Padding="2">
+                                <Image Source="{Binding ImageSource}"
+                                   HeightRequest="120"
+                                   WidthRequest="120"
+                                   Aspect="AspectFill">
+                                </Image>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnFrameTapped"
+                                        CommandParameter="{Binding ImageSource}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+
+        <StackLayout Orientation="Horizontal" 
+                     HorizontalOptions="CenterAndExpand">
+            <Button Text="Next exercise" />
+            <Button Text="Retake photos"></Button>
+        </StackLayout>
+
+        <Button Text="Done"
+                Clicked="DoneButton_Clicked"/>
+
+    </StackLayout>
+</ContentPage>

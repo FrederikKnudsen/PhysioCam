@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.NewExercisePage">
+
+    <StackLayout>
+            
+        <Image x:Name="PhotoImage"
+               BackgroundColor="Black"
+               WidthRequest="300"
+               HeightRequest="300"/>
+        
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center">
+        <Button x:Name="RetakePhoto" 
+                Text="Retake Photo"
+                IsVisible="False"/>
+        <Button x:Name="NewPhoto" 
+                Text="New Photo"/>
+            <Button x:Name="DeletePhoto" 
+                Text="Delete Photo"
+                IsVisible="False"/>
+        </StackLayout>
+
+        <ScrollView Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand">
+            <StackLayout BindableLayout.ItemsSource="{Binding Exercises}"
+                         Orientation="Horizontal">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal">
+                            <Frame Margin="0" 
+                                   Padding="2">
+                                <Image Source="{Binding ImageSource}"
+                                   HeightRequest="120"
+                                   WidthRequest="120"
+                                   Aspect="AspectFill">
+                                </Image>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="OnFrameTapped"
+                                        CommandParameter="{Binding ImageSource}"/>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+
+        <Button x:Name="AddDescriptionButton" 
+                Text="Add Description"
+                IsVisible="False"/>
+    </StackLayout>
+</ContentPage>
