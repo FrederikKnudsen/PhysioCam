@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.RegistrationPage">
+    <ContentPage.Resources>
+        <ResourceDictionary/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry x:Name="fullnameEntry" Placeholder="Fullname" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Entry x:Name="emailEntry" Placeholder="Email" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Entry x:Name="phoneEntry" Placeholder="Phonenumber" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Entry x:Name="repeatpasswordEntry" Placeholder="Repeat Password" IsPassword="True" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Entry x:Name="clinicnameEntry" Placeholder="Clinic Name" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Entry x:Name="clinicstreetEntry" Placeholder="Clinic Street" Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="0"/>
+                <Entry x:Name="buildingnumberEntry" Placeholder="Building Number" Grid.Row="7" Grid.ColumnSpan="1" Grid.Column="0"/>
+                <Entry x:Name="zipcodeEntry" Placeholder="Zipcode" Grid.Row="8" Grid.ColumnSpan="1" Grid.Column="0"/>
+                <Button x:Name="addlogoButton" Text="Add Clinic Logo" Grid.Row="7" Grid.ColumnSpan="1" Grid.Column="1" Grid.RowSpan="2" Clicked="OnAddLogoButtonClicked"/>
+                <Button x:Name="completeregistrationButton" Text="Complete Registration" Grid.Row="9" Grid.ColumnSpan="2" Grid.Column="0" Clicked="OnCompleteRegistrationButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

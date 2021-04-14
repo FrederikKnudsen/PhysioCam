@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PhysioCam.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace PhysioCam
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new NewExercisePage());
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
