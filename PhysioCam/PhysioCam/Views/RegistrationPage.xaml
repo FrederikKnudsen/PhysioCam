@@ -34,8 +34,8 @@
                 <Entry x:Name="clinicstreetEntry" Placeholder="Clinic Street" Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="0"/>
                 <Entry x:Name="buildingnumberEntry" Placeholder="Building Number" Grid.Row="7" Grid.ColumnSpan="1" Grid.Column="0"/>
                 <Entry x:Name="zipcodeEntry" Placeholder="Zipcode" Grid.Row="8" Grid.ColumnSpan="1" Grid.Column="0"/>
-                <Button x:Name="addlogoButton" Text="Add Clinic Logo" Grid.Row="7" Grid.ColumnSpan="1" Grid.Column="1" Grid.RowSpan="2" Clicked="OnAddLogoButtonClicked"/>
-                <Button x:Name="completeregistrationButton" Text="Complete Registration" Grid.Row="9" Grid.ColumnSpan="2" Grid.Column="0" Clicked="OnCompleteRegistrationButtonClicked"/>
+                <Button x:Name="addlogoButton" Text="Add Clinic Logo" Grid.Row="7" Grid.ColumnSpan="1" Grid.Column="1" Grid.RowSpan="2" Clicked="OnAddLogoButtonClicked" Style="{StaticResource ButtonStyle1}"/>
+                <Button x:Name="completeregistrationButton" Text="Complete Registration" Grid.Row="9" Grid.ColumnSpan="2" Grid.Column="0" Clicked="OnCompleteRegistrationButtonClicked" Style="{StaticResource ButtonStyle1}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
