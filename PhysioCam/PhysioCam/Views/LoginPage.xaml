@@ -21,7 +21,7 @@
                 </Grid.ColumnDefinitions>
                 <Entry x:Name="usernameEntry" Placeholder="Username" Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0"/>
                 <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0"/>
-                <Button x:Name="loginButton" Text="Login" Grid.Row="2" Grid.ColumnSpan="1" Grid.Column="0" Clicked="OnLoginPageButtonClicked"/>
+                <Button x:Name="loginButton" Text="Login" Grid.Row="2" Grid.ColumnSpan="1" Grid.Column="0" Clicked="OnLoginPageButtonClicked" Style="{StaticResource ButtonStyle1}"/>
                 <Button x:Name="registrationButton" Text="Register" Grid.Row="3" Grid.ColumnSpan="1" Grid.Column="1" Clicked="OnRegistrationPageButtonClicked"/>
             </Grid>
         </StackLayout>

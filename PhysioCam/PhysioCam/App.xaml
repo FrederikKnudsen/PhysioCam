@@ -4,5 +4,13 @@
              x:Class="PhysioCam.App">
     <Application.Resources>
 
+        <!-- Colors -->
+        <Color x:Key="ColorTest">Blue</Color>
+
+        <!-- Styles -->
+        <Style x:Key="ButtonStyle1" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource ColorTest}" />
+        </Style>
+
     </Application.Resources>
 </Application>
