@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Pageviews="clr-namespace:PhysioCam.Views"
+       x:Class="PhysioCam.AppShell">
+    <Shell.Resources>
+        <StyleSheet Source="/Assets/appshell.css" />
+    </Shell.Resources>
+
+    <!--This is the header background section-->
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#92C3D7">
+            <Label Text="PhysioCam"
+               TextColor="White"
+               FontAttributes="Bold"
+               HeightRequest="56"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!--This is the body section-->
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Programs"
+             Icon="programs">
+            <ShellContent>
+                <Pageviews:LoginPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Exercises"
+             Icon="exercises">
+            <ShellContent>
+                <Pageviews:RegistrationPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Settings"
+             Icon="settings">
+            <ShellContent>
+                <Pageviews:LoginPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Logout"
+                Icon="logout">
+        <Tab>
+            <ShellContent>
+                <Pageviews:RegistrationPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid
+                Padding="10,2,10,2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="64" />
+                </Grid.RowDefinitions>
+                <Image Source="{Binding Icon}"
+                    Margin="16"
+                    HeightRequest="32" />
+                <Label Grid.Column="1"
+                    Text="{Binding Title}"
+                    HeightRequest="32"
+                    FontAttributes="Bold"
+                    VerticalTextAlignment="Center" 
+                    TextColor="#92C3D7"
+                    FontSize="16"
+                    />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+</Shell>
