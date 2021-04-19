@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Android.Views;
 
 namespace PhysioCam.Droid
 {
@@ -12,10 +13,13 @@ namespace PhysioCam.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            ToolbarResource = Resource.Layout.Toolbar;
             base.OnCreate(savedInstanceState);
-
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
+
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
