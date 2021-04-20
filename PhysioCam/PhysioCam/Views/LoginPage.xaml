@@ -21,11 +21,33 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image x:Name="physioLogoImage" Source="Logo" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-                <Entry x:Name="usernameEntry" Placeholder="Username" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0"/>
-                <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0"/>
-                <Button x:Name="loginButton" Text="Login" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0" Clicked="OnLoginPageButtonClicked" Style="{StaticResource ButtonStyle1}"/>
-                <Button x:Name="registrationButton" Text="Register" Grid.Row="5" Grid.ColumnSpan="2" Grid.Column="0" Clicked="OnRegistrationPageButtonClicked" Style="{StaticResource ButtonStyle2}"/>
+                <Image x:Name="physioLogoImage" 
+                       Source="Logo" 
+                       Grid.Row="0" 
+                       Grid.ColumnSpan="2" 
+                       Grid.RowSpan="3"/>
+                <Entry x:Name="usernameEntry" 
+                       Placeholder="Username" 
+                       Grid.Row="2" 
+                       Grid.ColumnSpan="2" 
+                       Grid.Column="0"/>
+                <Entry x:Name="passwordEntry" 
+                       Placeholder="Password"
+                       IsPassword="True" 
+                       Grid.Row="3" 
+                       Grid.ColumnSpan="2" 
+                       Grid.Column="0"/>
+                <Button x:Name="loginButton" 
+                        Text="Login" 
+                        Grid.Row="4" 
+                        Grid.ColumnSpan="2" 
+                        Grid.Column="0" 
+                        Clicked="OnLoginPageButtonClicked" />
+                <Button x:Name="registrationButton" 
+                        Text="Register" Grid.Row="5" 
+                        Grid.ColumnSpan="2" 
+                        Grid.Column="0" 
+                        Clicked="OnRegistrationPageButtonClicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

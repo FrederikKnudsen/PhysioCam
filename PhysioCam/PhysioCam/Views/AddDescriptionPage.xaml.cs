@@ -39,10 +39,12 @@ namespace PhysioCam.Views
             var imageSource = (ImageSource)parameters;
 
             _selectedExercise.Description = EditorTextInput.Text;
+            _selectedExercise.ETitle = EditorTitleInput.Text;
 
             _selectedExercise = Exercises.FirstOrDefault(i => i.ImageSource == imageSource);
 
             EditorTextInput.Text = _selectedExercise.Description;
+            EditorTitleInput.Text = _selectedExercise.ETitle;
         }
 
         void HighlightFrames(object sender)
@@ -60,8 +62,9 @@ namespace PhysioCam.Views
         private void DoneButton_Clicked(object sender, EventArgs e)
         {
             Exercises.FirstOrDefault(i => i.ImageSource == _selectedExercise.ImageSource).Description = EditorTextInput.Text;
+            Exercises.FirstOrDefault(i => i.ImageSource == _selectedExercise.ImageSource).ETitle = EditorTitleInput.Text;
 
-            Navigation.PopAsync();
+            Navigation.PushAsync(new ExerciseListPage(Exercises));
         }
     }
 }

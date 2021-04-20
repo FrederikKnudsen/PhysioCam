@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.EmailModal"
+             Opacity="1">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="CloseButton" 
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" 
+                    Clicked="CloseButton_OnClicked"
+                    WidthRequest="300"/>
+
+            <Entry x:Name="ToEntry"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand"
+                   WidthRequest="300"
+                   BackgroundColor="SlateGray"/>
+            <Entry x:Name="FromEntry"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand"
+                   WidthRequest="300"
+                   BackgroundColor="SlateGray"/>
+            <Entry x:Name="TitleEntry"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   WidthRequest="300"
+                   BackgroundColor="SlateGray"/>
+            <Editor x:Name="MessageEntry"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   HeightRequest="300"
+                   WidthRequest="300"
+                   BackgroundColor="SlateGray"/>
+            <Button x:Name="SendButton"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

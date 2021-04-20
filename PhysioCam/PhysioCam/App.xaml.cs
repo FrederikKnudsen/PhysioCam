@@ -11,7 +11,7 @@ namespace PhysioCam
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new NewExercisePage());
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

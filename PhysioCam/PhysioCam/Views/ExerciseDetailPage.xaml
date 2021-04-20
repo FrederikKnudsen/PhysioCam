@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.ExerciseDetailPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Entry HorizontalOptions="CenterAndExpand"
+                       Text="{Binding _currentExercise.ETitle}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Entry Text="Shoulder"
+                           FontSize="20" />
+                    <Entry Text="3 x 15 Reps"
+                           FontSize="20"
+                           HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <Entry Text="{Binding _currentExercise.Description}"/>
+
+                    <Image Source="{Binding _currentExercise.ImageSource}" />
+
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="ExportButton" 
+                            HorizontalOptions="StartAndExpand"
+                            WidthRequest="150"
+                            Text="Export as pdf"/>
+                    <Button HorizontalOptions="EndAndExpand" 
+                            Clicked="SendMailButton_OnClicked"
+                            WidthRequest="150"
+                            Text="Send as email"/>
+                </StackLayout>
+                <Button HorizontalOptions="CenterAndExpand" 
+                        Clicked="SaveButton_OnClicked"
+                        WidthRequest="150"
+                        Text="Save Program" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
@@ -16,12 +17,18 @@ namespace PhysioCam.Model
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
-        public ImageSource ImageSource { 
-            get { return _imageSource; } 
-            set { _imageSource = value; OnPropertyChanged("ImageSource"); } }
+        public ImageSource ImageSource
+        {
+            get { return _imageSource; }
+            set { _imageSource = value; OnPropertyChanged("ImageSource"); }
+        }
 
         private ImageSource _imageSource;
+        public int Id { get; set; }
+        public string ETitle { get; set; }
         public string Description { get; set; }
+        public string ExerciseType { get; set; }
+        public string Reps { get; set; }
     }
 
     public class Images

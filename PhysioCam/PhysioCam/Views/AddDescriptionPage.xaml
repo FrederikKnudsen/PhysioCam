@@ -8,13 +8,14 @@
                  Padding="10,25,10,10">
 
         <StackLayout>
-            <Label Text="Patient Name - Birthdate" 
+            <Label Text="Lotte Hansen - 6/12/1985" 
                HorizontalOptions="CenterAndExpand" 
                FontSize="25"/>
 
             <Frame CornerRadius="10" 
                BorderColor="#92C3D7">
-                <customrenders:CustomEditor Placeholder="Exercise name..."/>
+                <customrenders:CustomEditor Placeholder="Exercise name..."
+                                            x:Name="EditorTitleInput"/>
             </Frame>
 
             <!--<StackLayout Orientation="Horizontal"

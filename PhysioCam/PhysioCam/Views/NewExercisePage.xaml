@@ -4,17 +4,17 @@
              x:Class="PhysioCam.NewExercisePage">
 
     <StackLayout>
-            
+
         <Image x:Name="PhotoImage"
                WidthRequest="350"
                HeightRequest="350"/>
-        
+
         <StackLayout Orientation="Horizontal"
                      HorizontalOptions="Center">
-        <Button x:Name="RetakePhoto" 
+            <Button x:Name="RetakePhoto" 
                 Text="Retake Photo"
                 IsVisible="False"/>
-        <Button x:Name="NewPhoto" 
+            <Button x:Name="NewPhoto" 
                 Text="New Photo"
                 IsVisible="False"/>
             <Button x:Name="DeletePhoto" 

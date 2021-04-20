@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout Margin="16"
+                 Spacing="10">
+            <Label Text="Language" FontSize="16" />
+            <Button Text="English" HorizontalOptions="Fill"/>
+            <Label Text="Notifications" FontSize="16" />
+            <Button Text="Notifications are currently disabled" HorizontalOptions="Fill"/>
+            <Label Text="Privacy" FontSize="16" />
+            <Button Text="Use of data" />
+            <Button Text="Privacy policy" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

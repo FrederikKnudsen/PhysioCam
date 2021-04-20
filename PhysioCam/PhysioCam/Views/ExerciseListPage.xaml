@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PhysioCam.Views.ExerciseListPage"
+             xmlns:model="clr-namespace:PhysioCam.Model"
+             xmlns:local="clr-namespace:PhysioCam">
+
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" x:DataType="model:Patient">
+            <Label x:Name="NameLabel" HorizontalOptions="CenterAndExpand"></Label>
+            <Label x:Name="BirthLabel" HorizontalOptions="CenterAndExpand"></Label>
+        </StackLayout>
+
+        <ListView x:Name="exerciseListView" 
+                  ItemSelected="OnItemSelect">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding ImageSource}" />
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding ETitle}"/>
+                                <Label Text="{Binding Description}"/>
+                            </StackLayout>
+                            <Label Text="#" HorizontalOptions="EndAndExpand" Padding="10"></Label>
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
