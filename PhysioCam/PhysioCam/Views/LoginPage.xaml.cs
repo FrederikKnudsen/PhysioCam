@@ -25,7 +25,7 @@ namespace PhysioCam.Views
         // Skal ændres til en anden page, når vi får dem implementeret!
         private async void OnLoginPageButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PopToRootAsync();
+            await Navigation.PushAsync(new NewExercisePage());
         }
     }
 }

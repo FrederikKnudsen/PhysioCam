@@ -6,9 +6,8 @@
     <StackLayout>
             
         <Image x:Name="PhotoImage"
-               BackgroundColor="Black"
-               WidthRequest="300"
-               HeightRequest="300"/>
+               WidthRequest="350"
+               HeightRequest="350"/>
         
         <StackLayout Orientation="Horizontal"
                      HorizontalOptions="Center">
@@ -16,7 +15,8 @@
                 Text="Retake Photo"
                 IsVisible="False"/>
         <Button x:Name="NewPhoto" 
-                Text="New Photo"/>
+                Text="New Photo"
+                IsVisible="False"/>
             <Button x:Name="DeletePhoto" 
                 Text="Delete Photo"
                 IsVisible="False"/>
@@ -50,6 +50,7 @@
 
         <Button x:Name="AddDescriptionButton" 
                 Text="Add Description"
-                IsVisible="False"/>
+                IsVisible="False"
+                />
     </StackLayout>
 </ContentPage>

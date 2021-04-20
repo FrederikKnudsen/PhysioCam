@@ -1,4 +1,4 @@
-﻿using PhysioCam.Models;
+﻿using PhysioCam.Model;
 using PhysioCam.Views;
 using Plugin.Media;
 using System;
@@ -13,8 +13,8 @@ namespace PhysioCam
     public partial class NewExercisePage : ContentPage
     {
         public ObservableCollection<Exercise> Exercises { get; set; }
-
         public ImageSource SelectedImage { get; set; }
+        private Frame _lastFrame;
         public NewExercisePage()
         {
             InitializeComponent();
@@ -25,6 +25,8 @@ namespace PhysioCam
             RetakePhoto.Clicked += RetakePhoto_Clicked;
             DeletePhoto.Clicked += DeletePhoto_Clicked;
             AddDescriptionButton.Clicked += AddDescriptionButton_Clicked;
+
+            CameraButton_Clicked(null, null);
         }
 
         private void OnFrameTapped(object sender, EventArgs e)
@@ -32,6 +34,8 @@ namespace PhysioCam
             var imageSource = ((TappedEventArgs)e).Parameter;
             PhotoImage.Source = (ImageSource)imageSource;
             SelectedImage = PhotoImage.Source;
+
+            HighlightFrames(sender);
         }
 
         private void AddDescriptionButton_Clicked(object sender, EventArgs e)
@@ -39,9 +43,20 @@ namespace PhysioCam
             Navigation.PushAsync(new AddDescriptionPage(Exercises));
         }
 
+        void HighlightFrames(object sender)
+        {
+            if (_lastFrame == null)
+                _lastFrame = ((Frame)sender);
+
+            _lastFrame.BackgroundColor = Color.White;
+
+            ((Frame)sender).BackgroundColor = Color.FromHex("#0c94cc");
+
+            _lastFrame = ((Frame)sender);
+        }
+
         private async void DeletePhoto_Clicked(object sender, EventArgs e)
         {
-
             bool remove = await DisplayAlert("Delete", "Are you sure you want to delete image?", "Yes", "No");
 
             if (!remove)
@@ -85,6 +100,7 @@ namespace PhysioCam
                 AddDescriptionButton.IsVisible = true;
                 RetakePhoto.IsVisible = true;
                 DeletePhoto.IsVisible = true;
+                NewPhoto.IsVisible = true;
             }
 
         }

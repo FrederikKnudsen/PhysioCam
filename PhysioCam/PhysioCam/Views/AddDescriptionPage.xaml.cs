@@ -1,4 +1,4 @@
-﻿using PhysioCam.Models;
+﻿using PhysioCam.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +15,9 @@ namespace PhysioCam.Views
     public partial class AddDescriptionPage : ContentPage
     {
         public ObservableCollection<Exercise> Exercises { get; set; }
+        public IList<string> AreaOfExercise = new List<string>() { "Shoulders", "Neck", "Back", "Legs" };
+        public IList<string> Repetitions = new List<string>() { "2 x 10", "3 x 10", "2 x 15", "3 x 15" };
+
         private Exercise _selectedExercise { get; set; }
         private Frame _lastFrame;
         public AddDescriptionPage(ObservableCollection<Exercise> Exercises)
@@ -49,7 +52,7 @@ namespace PhysioCam.Views
 
             _lastFrame.BackgroundColor = Color.White;
 
-            ((Frame)sender).BackgroundColor = Color.Red;
+            ((Frame)sender).BackgroundColor = Color.FromHex("#0c94cc");
 
             _lastFrame = ((Frame)sender);
         }

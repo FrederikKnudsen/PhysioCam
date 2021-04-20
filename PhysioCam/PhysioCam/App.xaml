@@ -4,5 +4,76 @@
              x:Class="PhysioCam.App">
     <Application.Resources>
 
+        <Color x:Key="ButtonColor">#92C3D7</Color>
+        <Color x:Key="PrimaryBackgroundColor">#DCE3E6</Color>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="BackgroundColor" Value="{StaticResource ButtonColor}"/>
+            <Setter Property="CornerRadius" Value="25"/>
+        </Style>
+
+        <Style TargetType="{x:Type StackLayout}">
+            <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}"/>
+        </Style>
+
+        <Style TargetType="{x:Type NavigationPage}">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryBackgroundColor}"/>
+        </Style>
+
+        <Style TargetType="{x:Type Frame}">
+            <Setter Property="Padding" Value="10"/>
+        </Style>
+
+        <!--<Style x:Key="ButtonBlueStart" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#92C3D7"/>
+            <Setter Property="FontFamily" Value="Nunito-SemiBold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="CharacterSpacing" Value="10"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+        <Style x:Key="ButtonBlueLarge" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#92C3D7"/>
+            <Setter Property="FontFamily" Value="Roboto-Regular"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="CharacterSpacing" Value="5"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+        <Style x:Key="ButtonTranspLarge" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="BorderColor" Value="#92C3D7"/>
+            <Setter Property="BorderWidth" Value="2"/>
+            <Setter Property="FontFamily" Value="Nunito-SemiBold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="CornerRadius" Value="25"/>
+            <Setter Property="CharacterSpacing" Value="10"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+        <Style x:Key="InputTransp" TargetType="Label">
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="InputTransparent" Value="True"/>
+            <Setter Property="Opacity" Value="65"/>
+            <Setter Property="FontFamily" Value="Nunito-Regular"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="CharacterSpacing" Value="3"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+        <Style x:Key="InputNormal" TargetType="Label">
+            <Setter Property="BackgroundColor" Value="White"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Opacity" Value="65"/>
+            <Setter Property="FontFamily" Value="Roboto-Thin"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="CharacterSpacing" Value="3"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>-->
+
     </Application.Resources>
 </Application>

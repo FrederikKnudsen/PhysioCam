@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Text;
 using Xamarin.Forms;
 
-namespace PhysioCam.Models
+namespace PhysioCam.Model
 {
     public class Exercise : INotifyPropertyChanged
     {

@@ -1,49 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:customrenders="clr-namespace:PhysioCam.CustomRenders"
              x:Class="PhysioCam.Views.AddDescriptionPage">
-    <StackLayout VerticalOptions="Center">
 
-        <Editor x:Name="EditorTextInput"
-                HeightRequest="300"
-                Placeholder="Enter exercise description">
+    <StackLayout VerticalOptions="Center"
+                 Padding="10,25,10,10">
 
-        </Editor>
+        <StackLayout>
+            <Label Text="Patient Name - Birthdate" 
+               HorizontalOptions="CenterAndExpand" 
+               FontSize="25"/>
 
-        <ScrollView Orientation="Horizontal"
+            <Frame CornerRadius="10" 
+               BorderColor="#92C3D7">
+                <customrenders:CustomEditor Placeholder="Exercise name..."/>
+            </Frame>
+
+            <!--<StackLayout Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand" HeightRequest="30">
+                <Frame Padding="0">
+                    <Picker Title="Repetitions"/>
+                </Frame>            
+            <Frame>
+                    <Picker Title="Area of exercise" />
+                </Frame>
+            </StackLayout>-->
+
+            <Frame CornerRadius="10" 
+               BorderColor="#92C3D7">
+                <customrenders:CustomEditor x:Name="EditorTextInput"
+                HeightRequest="200"
+                Placeholder="Enter exercise description" 
+                    />
+            </Frame>
+        </StackLayout>
+
+        <StackLayout>
+            <ScrollView Orientation="Horizontal"
                     HorizontalOptions="CenterAndExpand">
-            <StackLayout BindableLayout.ItemsSource="{Binding Exercises}"
+                <StackLayout BindableLayout.ItemsSource="{Binding Exercises}"
                          Orientation="Horizontal">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Orientation="Horizontal">
-                            <Frame Margin="0" 
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Margin="0" 
                                    Padding="2">
-                                <Image Source="{Binding ImageSource}"
+                                    <Image Source="{Binding ImageSource}"
                                    HeightRequest="120"
                                    WidthRequest="120"
                                    Aspect="AspectFill">
-                                </Image>
-                                <Frame.GestureRecognizers>
-                                    <TapGestureRecognizer
+                                    </Image>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer
                                         Tapped="OnFrameTapped"
                                         CommandParameter="{Binding ImageSource}"/>
-                                </Frame.GestureRecognizers>
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
-        </ScrollView>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
 
-        <StackLayout Orientation="Horizontal" 
+            <StackLayout Orientation="Horizontal" 
                      HorizontalOptions="CenterAndExpand">
-            <Button Text="Next exercise" />
-            <Button Text="Retake photos"></Button>
-        </StackLayout>
+                <Button Text="Next exercise" />
+                <Button Text="Edit photos" />
+            </StackLayout>
 
-        <Button Text="Done"
+            <Button Text="Confirm Program"
                 Clicked="DoneButton_Clicked"/>
 
+        </StackLayout>
     </StackLayout>
 </ContentPage>
