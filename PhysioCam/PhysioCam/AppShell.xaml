@@ -2,11 +2,7 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Pageviews="clr-namespace:PhysioCam.Views"
        x:Class="PhysioCam.AppShell">
-    <Shell.Resources>
-        <StyleSheet Source="/Assets/appshell.css" />
-    </Shell.Resources>
-
-    <!--This is the header background section-->
+    <!-- Menu header -->
     <Shell.FlyoutHeader>
         <Grid BackgroundColor="#92C3D7">
             <Label Text="PhysioCam"
@@ -18,7 +14,7 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <!--This is the body section-->
+    <!-- Menu items -->
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <Tab Title="Programs"
              Icon="programs">
@@ -35,7 +31,7 @@
         <Tab Title="Settings"
              Icon="settings">
             <ShellContent>
-                <Pageviews:LoginPage />
+                <Pageviews:SettingsPage />
             </ShellContent>
         </Tab>
     </FlyoutItem>
