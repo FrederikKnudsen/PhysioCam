@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace PhysioCam.Models
@@ -16,9 +13,11 @@ namespace PhysioCam.Models
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
-        public ImageSource ImageSource { 
-            get { return _imageSource; } 
-            set { _imageSource = value; OnPropertyChanged("ImageSource"); } }
+        public ImageSource ImageSource
+        {
+            get { return _imageSource; }
+            set { _imageSource = value; OnPropertyChanged("ImageSource"); }
+        }
 
         private ImageSource _imageSource;
         public string Description { get; set; }
