@@ -15,12 +15,18 @@
         <ListView x:Name="exerciseListView" 
                   ItemSelected="OnItemSelect">
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="model:ExerciseItem">
                     <ViewCell>
                         <StackLayout Orientation="Horizontal">
-                            <Image Source="{Binding ImageSource}" />
+                            <StackLayout BindableLayout.ItemsSource="{Binding Image}" Orientation="Horizontal">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate x:DataType="model:Image">
+                                        <Image Source="{ Binding ImageUrl}" HeightRequest="100" />
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
                             <StackLayout Orientation="Vertical">
-                                <Label Text="{Binding ETitle}"/>
+                                <Label Text="{Binding Title}"/>
                                 <Label Text="{Binding Description}"/>
                             </StackLayout>
                             <Label Text="#" HorizontalOptions="EndAndExpand" Padding="10"></Label>

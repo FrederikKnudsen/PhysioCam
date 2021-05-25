@@ -14,10 +14,11 @@ namespace PhysioCam.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseListPage : ContentPage
     {
-        private Exercise _selectedExercise;
+        private ExerciseItem _selectedExercise;
         private MockData mockData;
         private ObservableCollection<Exercise> _exercises;
         private Patient patient;
+        private ExerciseManager exManager = new ExerciseManager();
 
         public ExerciseListPage(ObservableCollection<Exercise> Exercises)
         {
@@ -33,9 +34,17 @@ namespace PhysioCam.Views
             AddListViewItems();
         }
 
-        public void AddListViewItems()
+        protected async override void OnAppearing()
         {
-            exerciseListView.ItemsSource = _exercises;
+            base.OnAppearing();
+            AddListViewItems();
+
+        }
+
+        public async void AddListViewItems()
+        {
+            List<ExerciseItem> exercises = await exManager.GetAllExercises();
+            exerciseListView.ItemsSource = exercises;
         }
 
         public void AddPatientInfo()
@@ -49,7 +58,7 @@ namespace PhysioCam.Views
 
         private void OnItemSelect(object sender, SelectedItemChangedEventArgs e)
         {
-            _selectedExercise = (Exercise)exerciseListView.SelectedItem;
+            _selectedExercise = (ExerciseItem)exerciseListView.SelectedItem;
             var detailPage = new ExerciseDetailPage(_selectedExercise);
             Navigation.PushAsync(detailPage);
         }

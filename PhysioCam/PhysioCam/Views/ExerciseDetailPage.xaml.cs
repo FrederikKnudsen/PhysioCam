@@ -14,8 +14,8 @@ namespace PhysioCam.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseDetailPage : ContentPage
     {
-        public Exercise _currentExercise { get; set; }
-        public ExerciseDetailPage(Exercise exercises)
+        public ExerciseItem _currentExercise { get; set; }
+        public ExerciseDetailPage(ExerciseItem exercises)
         {
             InitializeComponent();
             _currentExercise = exercises;
