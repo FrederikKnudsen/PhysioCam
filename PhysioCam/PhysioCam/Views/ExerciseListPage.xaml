@@ -29,7 +29,7 @@
                                 <Label Text="{Binding Title}"/>
                                 <Label Text="{Binding Description}"/>
                             </StackLayout>
-                            <Label Text="#" HorizontalOptions="EndAndExpand" Padding="10"></Label>
+                            <Label Text="{Binding id}" HorizontalOptions="EndAndExpand" Padding="10"></Label>
                         </StackLayout>
 
                     </ViewCell>
