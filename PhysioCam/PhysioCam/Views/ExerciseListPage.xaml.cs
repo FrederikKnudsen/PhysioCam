@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,13 +39,13 @@ namespace PhysioCam.Views
         {
             base.OnAppearing();
             AddListViewItems();
-
         }
 
         public async void AddListViewItems()
         {
             List<ExerciseItem> exercises = await exManager.GetAllExercises();
-            exerciseListView.ItemsSource = exercises;
+            var sorted = exercises.OrderBy(exercise => exercise.id).ToList();
+            exerciseListView.ItemsSource = sorted;
         }
 
         public void AddPatientInfo()

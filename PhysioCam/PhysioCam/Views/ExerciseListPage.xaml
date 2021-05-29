@@ -12,7 +12,7 @@
             <Label x:Name="BirthLabel" HorizontalOptions="CenterAndExpand"></Label>
         </StackLayout>
 
-        <ListView x:Name="exerciseListView" 
+        <ListView x:Name="exerciseListView"
                   ItemSelected="OnItemSelect">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="model:ExerciseItem">
